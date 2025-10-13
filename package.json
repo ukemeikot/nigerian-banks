@@ -3,11 +3,7 @@
   "version": "0.1.1",
   "description": "Typed list of Nigerian banks (name, code, ussd, slug, logo) with utilities for Node.js and browser.",
   "license": "MIT",
-  "author": "",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
+  "author": "Balogun Ridwan Ridbay",
   "keywords": [
     "nigeria",
     "banks",
@@ -51,5 +47,16 @@
     "tsup": "^8.0.1",
     "typescript": "^5.4.0",
     "vitest": "^2.0.0"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ridbay/nigerian-banks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ridbay/nigerian-banks/issues"
+  },
+  "homepage": "https://github.com/ridbay/nigerian-banks#readme"
 }
