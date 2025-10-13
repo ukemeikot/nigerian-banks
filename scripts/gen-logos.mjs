@@ -18,21 +18,25 @@ function toIdentifier(slug) {
 
 async function main() {
   const entries = await fs.readdir(logosDir, { withFileTypes: true });
-  const pngs = entries
-    .filter((e) => e.isFile() && e.name.toLowerCase().endsWith('.png'))
+  const images = entries
+    .filter((e) =>
+      e.isFile() && /\.(png|jpg|jpeg)$/i.test(e.name)
+    )
     .map((e) => e.name)
     .sort((a, b) => a.localeCompare(b));
 
   const imports = [];
   const mappings = [];
+  const fileMappings = [];
 
-  for (const file of pngs) {
-    const slug = file.replace(/\.png$/i, '');
+  for (const file of images) {
+    const slug = file.replace(/\.(png|jpg|jpeg)$/i, '');
     const ident = toIdentifier(slug);
     // Skip default-image, it will be used as a fallback in banks.ts
     if (slug === 'default-image') continue;
     imports.push(`import ${ident} from "../logos/${file}";`);
     mappings.push(`  "${slug}": ${ident},`);
+    fileMappings.push(`  "${slug}": "${file}",`);
   }
 
   const content = `// AUTO-GENERATED FILE. DO NOT EDIT.
@@ -41,6 +45,10 @@ ${imports.join('\n')}
 
 export const LOGOS: Record<string, string> = {
 ${mappings.join('\n')}
+};
+
+export const LOGO_FILES: Record<string, string> = {
+${fileMappings.join('\n')}
 };
 `;
 

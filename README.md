@@ -1,5 +1,18 @@
 # nigerian-banks
 
+[
+  ![npm version](https://img.shields.io/npm/v/nigerian-banks-with-logos-codes-ussd)
+](https://www.npmjs.com/package/nigerian-banks-with-logos-codes-ussd)
+[
+  ![npm downloads](https://img.shields.io/npm/dm/nigerian-banks-with-logos-codes-ussd)
+](https://www.npmjs.com/package/nigerian-banks-with-logos-codes-ussd)
+[
+  ![license](https://img.shields.io/npm/l/nigerian-banks-with-logos-codes-ussd)
+](./LICENSE)
+[
+  ![CI](https://github.com/ridbay/nigerian-banks/actions/workflows/ci.yml/badge.svg?branch=master)
+](https://github.com/ridbay/nigerian-banks/actions/workflows/ci.yml)
+
 Typed list of Nigerian banks with codes, slugs, USSD, and logos. Works in Node.js and the browser.
 
 Data comes from `src/all_banks.json`. Logos are imported from `src/logos/` and an auto-generated map links each bank `slug` to its logo at build time.

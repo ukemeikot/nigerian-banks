@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { getBanks, getBankByCode, getBankBySlug, searchBanks } from '../src/utils';
 import allBanks from '../src/all_banks.json';
-import defaultLogo from '../src/logos/default-image.png';
 
 describe('nigerian-banks utils', () => {
   it('getBanks returns all banks from JSON', () => {
@@ -50,6 +49,8 @@ describe('nigerian-banks utils', () => {
     // Choose a slug we know has no PNG in src/logos/
     const item = getBankBySlug('78-finance-company-limited');
     expect(item).toBeTruthy();
-    expect(item!.logo).toBe(defaultLogo);
+    expect(item!.logo).toBe(
+      'https://raw.githubusercontent.com/ridbay/nigerian-banks/refs/heads/master/src/logos/default-image.png'
+    );
   });
 });
