@@ -7,18 +7,24 @@ Data comes from `src/all_banks.json`. Logos are imported from `src/logos/` and a
 ## Install
 
 ```bash
-npm i nigerian-banks
+npm i nigerian-banks-with-logos-codes-ussd
 # or
-yarn add nigerian-banks
+yarn add nigerian-banks-with-logos-codes-ussd
 # or
-pnpm add nigerian-banks
+pnpm add nigerian-banks-with-logos-codes-ussd
 ```
 
 ## Usage
 
 ### TypeScript / ESM
+
 ```ts
-import { getBanks, getBankByCode, getBankBySlug, searchBanks } from "nigerian-banks";
+import {
+  getBanks,
+  getBankByCode,
+  getBankBySlug,
+  searchBanks,
+} from "nigerian-banks-with-logos-codes-ussd";
 
 const all = getBanks();
 const gt = getBankBySlug("guaranty-trust-bank");
@@ -30,14 +36,19 @@ console.log(all[0].logo);
 ```
 
 ### CommonJS
+
 ```js
-const { getBanks, getBankByCode } = require("nigerian-banks");
+const {
+  getBanks,
+  getBankByCode,
+} = require("nigerian-banks-with-logos-codes-ussd");
 
 console.log(getBanks());
 console.log(getBankByCode("058"));
 ```
 
 ### Example bank shape
+
 ```json
 {
   "id": "23",
@@ -50,6 +61,7 @@ console.log(getBankByCode("058"));
 ```
 
 ## API
+
 - **getBanks()**: `Bank[]` – all banks.
 - **getBankByCode(code)**: `Bank | undefined`
 - **getBankBySlug(slug)**: `Bank | undefined`
@@ -57,6 +69,7 @@ console.log(getBankByCode("058"));
 - **types**: `Bank`, `Banks`
 
 ## Notes
+
 - **USSD**: may be missing (undefined) for some banks.
 - **Data source**: `src/all_banks.json`. Update this file to change/add banks.
 - **Logos**:
@@ -79,37 +92,38 @@ console.log(getBankByCode("058"));
 
 ### Common slugs and filenames
 
-| Bank name                      | Slug                       | PNG filename                           |
-| ------------------------------ | -------------------------- | -------------------------------------- |
-| Access Bank                    | access-bank                | src/logos/access-bank.png              |
-| Access Bank (Diamond)          | access-bank-diamond        | src/logos/access-bank-diamond.png      |
-| ALAT by WEMA                   | alat-by-wema               | src/logos/alat-by-wema.png             |
-| Citibank Nigeria               | citibank-nigeria           | src/logos/citibank-nigeria.png         |
-| Ecobank Nigeria                | ecobank-nigeria            | src/logos/ecobank-nigeria.png          |
-| Ekondo Microfinance Bank       | ekondo-microfinance-bank   | src/logos/ekondo-microfinance-bank.png |
-| Fidelity Bank                  | fidelity-bank              | src/logos/fidelity-bank.png            |
-| First Bank of Nigeria          | first-bank-of-nigeria      | src/logos/first-bank-of-nigeria.png    |
-| First City Monument Bank       | first-city-monument-bank   | src/logos/first-city-monument-bank.png |
-| Globus Bank                    | globus-bank                | src/logos/globus-bank.png              |
-| Guaranty Trust Bank            | guaranty-trust-bank        | src/logos/guaranty-trust-bank.png      |
-| Heritage Bank                  | heritage-bank              | src/logos/heritage-bank.png            |
-| Keystone Bank                  | keystone-bank              | src/logos/keystone-bank.png            |
-| Kuda Bank                      | kuda-bank                  | src/logos/kuda-bank.png                |
-| Lotus Bank                     | lotus-bank                 | src/logos/lotus-bank.png               |
-| Moniepoint MFB                 | moniepoint-mfb-ng          | src/logos/moniepoint-mfb-ng.png        |
-| Paga                           | paga                       | src/logos/paga.png                     |
-| PalmPay                        | palmpay                    | src/logos/palmpay.png                  |
-| PayCom / OPay                  | paycom                     | src/logos/paycom.png                   |
-| Polaris Bank                   | polaris-bank               | src/logos/polaris-bank.png             |
-| Sparkle Microfinance Bank      | sparkle-microfinance-bank  | src/logos/sparkle-microfinance-bank.png|
-| Stanbic IBTC Bank              | stanbic-ibtc-bank          | src/logos/stanbic-ibtc-bank.png        |
-| Standard Chartered Bank        | standard-chartered-bank    | src/logos/standard-chartered-bank.png  |
-| Sterling Bank                  | sterling-bank              | src/logos/sterling-bank.png            |
-| TAJ Bank                       | taj-bank                   | src/logos/taj-bank.png                 |
-| Union Bank of Nigeria          | union-bank-of-nigeria      | src/logos/union-bank-of-nigeria.png    |
-| United Bank For Africa (UBA)   | united-bank-for-africa     | src/logos/united-bank-for-africa.png   |
-| Wema Bank                      | wema-bank                  | src/logos/wema-bank.png                |
-| Zenith Bank                    | zenith-bank                | src/logos/zenith-bank.png              |
+| Bank name                    | Slug                      | PNG filename                            |
+| ---------------------------- | ------------------------- | --------------------------------------- |
+| Access Bank                  | access-bank               | src/logos/access-bank.png               |
+| Access Bank (Diamond)        | access-bank-diamond       | src/logos/access-bank-diamond.png       |
+| ALAT by WEMA                 | alat-by-wema              | src/logos/alat-by-wema.png              |
+| Citibank Nigeria             | citibank-nigeria          | src/logos/citibank-nigeria.png          |
+| Ecobank Nigeria              | ecobank-nigeria           | src/logos/ecobank-nigeria.png           |
+| Ekondo Microfinance Bank     | ekondo-microfinance-bank  | src/logos/ekondo-microfinance-bank.png  |
+| Fidelity Bank                | fidelity-bank             | src/logos/fidelity-bank.png             |
+| First Bank of Nigeria        | first-bank-of-nigeria     | src/logos/first-bank-of-nigeria.png     |
+| First City Monument Bank     | first-city-monument-bank  | src/logos/first-city-monument-bank.png  |
+| Globus Bank                  | globus-bank               | src/logos/globus-bank.png               |
+| Guaranty Trust Bank          | guaranty-trust-bank       | src/logos/guaranty-trust-bank.png       |
+| Heritage Bank                | heritage-bank             | src/logos/heritage-bank.png             |
+| Keystone Bank                | keystone-bank             | src/logos/keystone-bank.png             |
+| Kuda Bank                    | kuda-bank                 | src/logos/kuda-bank.png                 |
+| Lotus Bank                   | lotus-bank                | src/logos/lotus-bank.png                |
+| Moniepoint MFB               | moniepoint-mfb-ng         | src/logos/moniepoint-mfb-ng.png         |
+| Paga                         | paga                      | src/logos/paga.png                      |
+| PalmPay                      | palmpay                   | src/logos/palmpay.png                   |
+| PayCom / OPay                | paycom                    | src/logos/paycom.png                    |
+| Polaris Bank                 | polaris-bank              | src/logos/polaris-bank.png              |
+| Sparkle Microfinance Bank    | sparkle-microfinance-bank | src/logos/sparkle-microfinance-bank.png |
+| Stanbic IBTC Bank            | stanbic-ibtc-bank         | src/logos/stanbic-ibtc-bank.png         |
+| Standard Chartered Bank      | standard-chartered-bank   | src/logos/standard-chartered-bank.png   |
+| Sterling Bank                | sterling-bank             | src/logos/sterling-bank.png             |
+| TAJ Bank                     | taj-bank                  | src/logos/taj-bank.png                  |
+| Union Bank of Nigeria        | union-bank-of-nigeria     | src/logos/union-bank-of-nigeria.png     |
+| United Bank For Africa (UBA) | united-bank-for-africa    | src/logos/united-bank-for-africa.png    |
+| Wema Bank                    | wema-bank                 | src/logos/wema-bank.png                 |
+| Zenith Bank                  | zenith-bank               | src/logos/zenith-bank.png               |
 
 ## License
+
 MIT

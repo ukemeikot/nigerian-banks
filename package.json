@@ -1,6 +1,6 @@
 {
-  "name": "nigerian-banks",
-  "version": "1.0.1",
+  "name": "nigerian-banks-with-logos-codes-ussd",
+  "version": "0.1.0",
   "description": "Typed list of Nigerian banks (name, code, ussd, slug, logo) with utilities for Node.js and browser.",
   "license": "MIT",
   "author": "",
