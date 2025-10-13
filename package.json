@@ -1,0 +1,55 @@
+{
+  "name": "nigerian-banks",
+  "version": "0.1.0",
+  "description": "Typed list of Nigerian banks (name, code, ussd, slug, logo) with utilities for Node.js and browser.",
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "nigeria",
+    "banks",
+    "bank",
+    "naira",
+    "ussd",
+    "bvn",
+    "ifsc",
+    "sort-code",
+    "finance",
+    "typescript",
+    "dataset"
+  ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prebuild": "node scripts/gen-logos.mjs",
+    "build": "node scripts/gen-logos.mjs && tsup src/index.ts --format esm,cjs --dts --clean",
+    "dev": "node scripts/gen-logos.mjs && tsup src/index.ts --format esm,cjs --dts --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pretest": "node scripts/gen-logos.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  }
+}
